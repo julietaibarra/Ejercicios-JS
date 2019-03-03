@@ -1,37 +1,49 @@
 /**
-Ejercicio 18
- * Una función cuadratica se escribe como ax^2+bx+c. Las mismas puede tener una, dos o ninguna
- raíz. Ecribir un programa que pida al usuario los datos de la misma, es decir, a, b y c, y
- muestre todas sus raíces, o el mensaje 'No tiene raíces' cuando corresponda. Recordar que las
- raíces están dadas por la fórmula de la resolvente.
- CORREJIR!!!
+ * Ejercicio 1, for y while
+ a) Hacer un programa que muestre, mediante un ciclo, los primeros 5
+ números naturales.
+ b) Hacer un  programa que premita al usuario elegir un número n y luego
+ muestre los primeros n números naturales( 1,2,...,n).
  */
- var a=prompt('Ingrese el valor a:');
- a=parseFloat(a);
- var b=prompt('Ingrese el valor b:');
- b=parseFloat(b);
- var c=prompt('Ingrese el valor c:');
- c=parseFloat(c);
- var x1;
- var x2;
- var x;
- if (a!=0) {
-   x1=(-b+(Math.sqrt((Math.pow(b,2)-(4*a*c)))))/(2*a);
-   x2=(-b-(Math.sqrt((Math.pow(b,2)-(4*a*c)))))/(2*a);
-   document.write('Las soluciones son x1:'+x1+ ' y x2:'+x2);
+ for (var i = 1; i <= 5; i++) {
+   document.write(i+',');
  }
- else {
-   if (b!=0) {
-     x=-c/b;
-     document.write('La solución de la ecuación es: x='+ x);
 
-   }
-   else {
-     if (c!=0) {
-       document.write('La ecuación no tiene solución.');
-   }
-   else {
-     document.write('La ecución tiene infinitas soluciones.');
-   }
+document.write('<br/> Punto b =');/*la etiqueta br sirve para realizar saltos del linea*/
+ var numero=prompt('Ingrese un número natural:');
+ numero=parseInt(numero);
+
+
+ for (var i = 1; i <=numero; i++) {
+   document.write('<br/>'+i+ '-');
+
  }
-}
+ /**
+  * Ejercicio 2
+  a) Hacer un programa que muestre, mediante un ciclo, los números desde
+  el 4 hasta el 7 (4,5,6,7).
+  b) Hacer un programa que premita al usuario elegir un número m y un n y
+  luego muestre todos los naturales m y n (m, m+1, m+2,...,n-1, n).
+  ¿Qué pasa si n es menor que m?
+  */
+document.write('<br/> Punto2 a <br/>');
+  for (var i = 4; i <=7; i++) {
+
+  document.write(i+ '-');
+  }
+
+document.write('<br/> Punto2 b <br/>');
+  var numero1=prompt('Ingrese un número :');
+  var numero2=prompt('Ingrese otro número:');
+
+  if (numero1>numero2) {
+    for (var i = numero2; i <=numero1; i++) {
+      document.write(i+' * ');
+    }
+
+  } else {
+    for (var i =numero1; i <= numero2; i++) {
+      document.write(i+ ' * ');
+    }
+
+  }
