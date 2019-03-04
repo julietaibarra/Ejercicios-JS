@@ -33,7 +33,7 @@ document.write("<hr>");
  var cont=0;
  for (var i = 0; i < n; i++) {
    if (n%i==0) {
-     cont+=1;
+     cont++;
    }
  }
 document.write('La cantidad de divisores del número '+n+' son '+cont+'.');
