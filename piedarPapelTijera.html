@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Piedra, papel y tijera</title>
+		<style>
+		   
+		    body{
+		        font-family:arial,sans-serif;
+		        background-color:#feffe8;
+		    }
+		    h1{
+		        text-decoration:underline;
+		        text-align:center;
+		    }
+		    table, td, tr{
+		        text-align:center;
+		        border:solid 2px;
+		    }
+		    
+		</style>
+	</head>
+	<body>
+	    <h1>Piedra, papel y tijera</h1>
+	   
+	       <table>
+	           <tr>
+	               <td>Piedra</td>
+	               <td>Papel</td>
+	               <td>Tijera</td>
+	           </tr>
+	           <tr>
+	               <td>0</td>
+	               <td>1</td>
+	               <td>2</td>
+	           </tr>
+	       </table>
+	       <br>
+	   <hr>
+	    
+	<script>
+alert('PIEDRA, PAPEL O TIJERA');
+
+var jugadas=0;
+var resulJuga=0;
+var resulCompu=0;
+
+
+while (jugadas<5) {
+    var jugador=prompt('elija 0:piedra , 1:papel, 2:tijera');
+    jugador=parseInt(jugador);
+    //var computadora=Math.ceil(Math.random()*2);
+    var computadora=Math.floor(Math.random()*(3-0))+0;//al poner al 3 como maximo, nunca es elegido.
+    if ((jugador<0)||(jugador>2)) {
+      alert('error!');
+    } else {
+
+      if ((computadora==0)&&(jugador==1)) {
+        alert('Punto para el jugador');
+        document.write('La computadora eligió piedra y usted papel.'+'<br>'+'Punto para Usted.'+'<br>');
+        resulJuga++;
+      }if ((computadora==1)&&(jugador==2)) {
+        alert('Punto para  el jugador');
+         document.write('La computadora eligió papel y usted tijera.'+'<br>'+'Punto para Usted.'+'<br>');
+        resulJuga++;
+      }
+      if ((computadora==2)&&(jugador==0)) {
+        alert('Punto para el jugador');
+         document.write('La computadora eligió tijera y usted piedra.'+'<br>'+'Punto para Usted.'+'<br>');
+        resulJuga++;
+      }
+      if ((computadora==1)&&(jugador==0)) {
+        alert('Punto para la computadora');
+         document.write('La computadora eligió papel y usted piedra.'+'<br>'+'Punto para la computadora.'+'<br>');
+        resulCompu++;
+      }
+      if ((computadora==2)&&(jugador==1)) {
+        alert('Punto para la computadora');
+        document.write('La computadora eligió tijera y usted papel.'+'<br>'+'Punto para la computadora.'+'<br>');
+        resulCompu++;
+      }
+      if ((computadora==0)&&(jugador==2)) {
+        alert('Punto para la computadora');
+        document.write('La computadora eligió piedra y usted tijera.'+'<br>'+'Punto para la computadora.'+'<br>');
+        resulCompu++;
+
+      }
+      if (computadora==jugador) {
+        alert('Empate, no suman puntos');
+        document.write('No se sumaron puntos.'+'<br>');
+      }
+      document.write('<br>'+'<hr>'+'<br>');
+      jugadas++;
+    }
+  }
+
+
+if (resulJuga>resulCompu) {
+  document.write('Ud gana! Felicidades! su puntaje es de '+resulJuga+' puntos y el de la computadora '+resulCompu+' Puntos.');
+}else if (resulJuga==resulCompu) {
+  document.write('Empate!! su puntaje es de '+ resulJuga+' puntos y el de la computadora es de '+resulCompu+ ' puntos.')
+
+}
+else {
+  document.write('La computadora Gano! su puntaje es '+resulJuga+' puntos y el de la computadora es de '+resulCompu+' puntos.');
+}
+
+	    </script>
+	    
+		
+	</body>
+</html>
